@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export USER_ID=$(id -u)
+export GROUP_ID=$(id -g)
+
+docker-compose --env-file=./.docker/config.env -f docker-compose.yaml up -d --build --remove-orphans "$@"
